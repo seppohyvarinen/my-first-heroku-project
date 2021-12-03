@@ -8,6 +8,14 @@ app.use(cors());
 
 const db = [{ name: "tiina" }, { name: "jack" }];
 
+let config = {
+  host: "mydb.tamk.fi",
+  user: process.env.user,
+  password: process.env.password,
+  database: process.env.database,
+  connectionLimit: 10,
+};
+
 app.get("/names", (req, res) => {
   res.send(db);
 });
